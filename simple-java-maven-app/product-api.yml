@@ -1,0 +1,55 @@
+openapi: 3.0.1
+info:
+  title: E-Commerce API
+  version: 1.0.0
+paths:
+  /products:
+    get:
+      tags:
+        - Product
+      summary: List all products
+      operationId: getAllProducts
+      responses:
+        '200':
+          description: A list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+  /orders:
+    get:
+      tags:
+        - Order
+      summary: List all orders
+      operationId: getAllOrders
+      responses:
+        '200':
+          description: A list of orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        productId:
+          type: string
+        quantity:
+          type: number
