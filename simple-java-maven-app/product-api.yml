@@ -7,7 +7,7 @@ paths:
     get:
       tags:
         - Product
-      summary: List all products to get updated refreshed api test
+      summary: List all products
       operationId: getAllProducts
       responses:
         '200':
